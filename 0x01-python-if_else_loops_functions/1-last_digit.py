@@ -2,14 +2,14 @@
 import random
 number = random.randint(-10000, 10000)
 if number >= 0:
-        LastD = number % 10
+        ld = number % 10
 else:
-        LastD = number % -10
-string1 = "Last digit of"
-if LastD > 5:
-        print("{} {} is {} and greater than 5".format(string1, number, LastD))
-elif LastD == 0:
-        print("{} {} is {} and is 0".format(string1, number, LastD))
+        ld = number % -10
+st1 = "Last digit of"
+if ld > 5:
+        print("{:s} {:d} is {:d} and greater than 5".format(st1, number, ld))
+elif ld == 0:
+        print("{:s} {:d} is {:d} and is 0".format(st1, number, ld))
 else:
-        string2 = "and is less than 6 and not 0"
-        print("{} {} is {} {}".format(string1, number, LastD, string2))
+        st2 = "and is less than 6 and not 0"
+        print("{:s} {:d} is {:d} {:s}".format(st1, number, ld, st2))
