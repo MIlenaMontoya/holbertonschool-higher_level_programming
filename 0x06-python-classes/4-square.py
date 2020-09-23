@@ -16,14 +16,27 @@ class Square():
         else:
             self.__size = size
 
-    '''crear nuevo constructor'''
-    def area(self):
-        return self.__size * self.__size
+    '''metodo get define contructor que
+    optiene el valor size'''
 
-    '''aqui va otro comentario'''
+    @property
     def size(self):
         return self.__size
 
-    '''otro definicion'''
+    '''metodo set que pone el valor y lo valida
+    segun el tipo de dato'''
+
+    @size.setter
     def size(self, value):
-        self.__size = size
+        if type(value) != int:
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
+
+    '''crear nuevo constructor que
+     retorna el area de un cuadrado'''
+
+    def area(self):
+        return self.__size ** 2
