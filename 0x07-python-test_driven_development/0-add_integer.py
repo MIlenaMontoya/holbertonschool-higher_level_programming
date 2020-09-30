@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-'''Write a function that adds 2 integers'''
+"""Write a function that adds 2 integers
+"""
 
 
 def add_integer(a, b=98):
-    '''function that adds 2 integers or floats
-    whit paramethers type int'''
+    """function that adds 2 integers or floats
+    whit paramethers type int
+    """
 
     if type(a) != int and type(a) != float:
         raise TypeError("a must be an integer")
@@ -15,4 +17,4 @@ def add_integer(a, b=98):
             a = int(a)
         if type(b) is float:
             b = int(b)
-        return(a + b)
+        return a + b
