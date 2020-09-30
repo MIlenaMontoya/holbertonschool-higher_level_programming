@@ -1,22 +1,22 @@
 #!/usr/bin/python3
-"""
-Write a function that adds 2 integers
-
-
-"""
+"""Documentation for simple add integer function"""
 
 
 def add_integer(a, b=98):
-    """function that adds 2 integers or floats
-    whit paramethers type int.
+    """Adds two integers together
+    Args:
+        a (int): first value to add
+        b (int, optional): second value to add
+    Returns:
+        the sum of a and b
     """
 
-    if type(a) != int and type(a) != float:
+    if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    if type(b) != int and type(b) != float:
+    if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    if type(a) is float:
+    if isinstance(a, float):
         a = int(a)
-    if type(b) is float:
+    if isinstance(b, float):
         b = int(b)
     return a + b
