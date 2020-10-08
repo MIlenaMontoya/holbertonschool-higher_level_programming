@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """[summary]
     """
+import json
 
 
-def append_write(filename="", text=""):
+def from_json_string(my_str):
     """[summary]
 
     Args:
         filename (str, optional): [description]. Defaults to "".
         text (str, optional): [description]. Defaults to "".
     """
-    with open(filename, 'a') as file:
-        return file.write(text)
+    return json.loads(my_str)
