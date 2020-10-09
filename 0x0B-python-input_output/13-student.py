@@ -27,3 +27,7 @@ class Student:
                     new_dic[i] = getattr(self, i)
             return new_dic
         return self.__dict__
+
+    def reload_from_json(self, json):
+        for i in json:
+            self.__dict__[i] = json[i]
