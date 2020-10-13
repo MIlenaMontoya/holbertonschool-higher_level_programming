@@ -6,6 +6,11 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """[summary]
+
+    Args:
+        Base ([type]): [description]
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -16,9 +21,9 @@ class Rectangle(Base):
 
     @property
     def width(self):
-         return self.__width
+        return self.__width
 
-    @width.setter  #task 3 validar atributos
+    @width.setter  # task 3 validar atributos
     def width(self, value):
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -66,7 +71,7 @@ class Rectangle(Base):
         else:
             self.__y = value
 
-# task 4 
+# task 4
     def area(self):
         return self.width * self.height
 
@@ -83,10 +88,11 @@ class Rectangle(Base):
 
 # task 6
     def __str__(self):
-        self.__str__ # falta hacer toda la tarea 
+        self.__str__   # falta hacer toda la tarea
 
 # task 8
-    def update(self, *args, **kwargs): # task 9 agregar kwargs a los argumentos de la funcion 
+# task 9 agregar kwargs a los argumentos de la funcion
+    def update(self, *args, **kwargs):
         self.width == 2
         self.height == 3
         self.x == 4
