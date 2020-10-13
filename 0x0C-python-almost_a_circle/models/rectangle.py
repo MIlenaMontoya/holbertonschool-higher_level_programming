@@ -138,22 +138,28 @@ class Rectangle(Base):
 
 # task 4
     def area(self):
-        return self.width * self.height
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
+        return self.__width * self.__height
 
 # task 5 y task 7
     def display(self):
-        for a in range(self.y):
-            print("")
-        for b in range(self.height):
-            for i in range(self.x):
+        for a in range(self.__y):
+            print()
+        for b in range(self.__height):
+            for i in range(self.__x):
                 print(" ", end="")
-            for j in range(self.width):
+            for j in range(self.__width):
                 print("#", end="")
-            print("")
+            print()
 
-# task 6
+'''# task 6
+# falta hacer toda la tarea
     def __str__(self):
-        self.__str__   # falta hacer toda la tarea
+        self.__str__
 
 # task 8
 # task 9 agregar kwargs a los argumentos de la funcion
@@ -170,3 +176,4 @@ class Rectangle(Base):
         self.height
         self.x
         self.y
+'''
