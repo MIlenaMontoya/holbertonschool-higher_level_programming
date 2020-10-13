@@ -6,13 +6,21 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """[summary]
+    """class Rectangle
 
     Args:
-        Base ([type]): [description]
+        hereda la clase Base
     """
-
     def __init__(self, width, height, x=0, y=0, id=None):
+        """[summary]
+
+        Args:
+            width ([type]): [description]
+            height ([type]): [description]
+            x (int, optional): [description]. Defaults to 0.
+            y (int, optional): [description]. Defaults to 0.
+            id ([type], optional): [description]. Defaults to None.
+        """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -21,10 +29,25 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__width
 
-    @width.setter  # task 3 validar atributos
+# task 3 validar atributos
+    @width.setter
     def width(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -34,23 +57,51 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
         if type(value) is not int:
-            raise TypeError("width must be an integer")
+            raise TypeError("height must be an integer")
         elif value <= 0:
-            raise ValueError("width must be > 0")
+            raise ValueError("height must be > 0")
         else:
             self.__height = value
 
     @property
     def x(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
         if type(value) is not int:
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -60,10 +111,24 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """[summary]
+
+        Returns:
+            [type]: [description]
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
+        """[summary]
+
+        Args:
+            value ([type]): [description]
+
+        Raises:
+            TypeError: [description]
+            ValueError: [description]
+        """
         if type(value) is not int:
             raise TypeError("y must be an integer")
         elif value < 0:
