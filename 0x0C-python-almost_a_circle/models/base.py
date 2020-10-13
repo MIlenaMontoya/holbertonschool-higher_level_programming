@@ -2,7 +2,11 @@
 """[summary]
     """
 # task 1 crear clase
+
+
 class Base:
+    """class base inicializa un objeto
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
