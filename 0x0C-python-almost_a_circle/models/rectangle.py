@@ -156,24 +156,53 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-'''# task 6
-# falta hacer toda la tarea
+# task 6
     def __str__(self):
-        self.__str__
+        """[summary]
 
-# task 8
-# task 9 agregar kwargs a los argumentos de la funcion
+        Returns:
+            [type]: [description]
+        """
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"\
+            .format(self.id, self.x, self.y, self.width, self.height)
+
     def update(self, *args, **kwargs):
-        self.width == 2
-        self.height == 3
-        self.x == 4
-        self.y == 5
+        """Method that update an instance/object
+        """
+        if args:
+            index = 0
+            for index, arg in enumerate(args):
+                if index == 0:
+                    self.id = arg
+                elif index == 1:
+                    self.width = arg
+                elif index == 2:
+                    self.height = arg
+                elif index == 3:
+                    self.x = arg
+                elif index == 4:
+                    self.y = arg
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
 
-# task 13
     def to_dictionary(self):
-        self.id
-        self.width
-        self.height
-        self.x
-        self.y
-'''
+        """Public Method that gives the instance as a dict
+        Returns:
+            [dict]: instance representation
+        """
+        return {
+            "x": self.x,
+            "y": self.y,
+            "id": self.id,
+            "height": self.height,
+            "width": self.width,
+        }
