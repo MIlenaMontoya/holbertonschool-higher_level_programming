@@ -1,46 +1,54 @@
 #!/usr/bin/python3
-"""This module holds the class Square
+    """[summary]
+
+    Returns:
+        [type]: [description]
     """
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square class that defines a Square
+    """[summary]
+
     Args:
-        Rectangle ([class]): Rectangle class
+        Rectangle ([type]): [description]
     """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Constructor Method initializator
+        """[summary]
+
         Args:
-            size ([int]): Size of the square
-            x (int, optional): x distance. Defaults to 0.
-            y (int, optional): y distance. Defaults to 0.
-            id ([type], optional): Num that identify the obj. Defaults to None.
+            size ([type]): [description]
+            x (int, optional): [description]. Defaults to 0.
+            y (int, optional): [description]. Defaults to 0.
+            id ([type], optional): [description]. Defaults to None.
         """
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """size getter
+        """[summary]
+
         Returns:
-            [int]: size of the square
+            [type]: [description]
         """
         return self.width
 
     @size.setter
     def size(self, value):
-        """size setter
+        """[summary]
+
         Args:
-            value ([obj]): value to assign
+            value ([type]): [description]
         """
         self.width = value
         self.height = value
 
     def __str__(self):
-        """Method that return the str representation
+        """[summary]
+
         Returns:
-            [str]: Square representation
+            [type]: [description]
         """
         str_id = str(self.id)
         str_height = str(self.height)
@@ -51,7 +59,7 @@ class Square(Rectangle):
         return str_new
 
     def update(self, *args, **kwargs):
-        """Method that update an instance/object
+        """[summary]
         """
         if args:
             index = 0
@@ -77,9 +85,10 @@ class Square(Rectangle):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
-        """Public Method that gives the instance as a dict
+        """[summary]
+
         Returns:
-            [dict]: instance representation
+            [type]: [description]
         """
         return {
             "id": self.id,
