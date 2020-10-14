@@ -1,16 +1,20 @@
 #!/usr/bin/python3
-"""[summary]
+"""This module holds the class Base
     """
 import json
-# task 1 crear clase
 
 
 class Base:
-    """class base inicializa un objeto
+    """ Class that initialize an object with a
+    specific id
     """
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Constructor Method gives an ID
+        Args:
+            id ([int], optional): Uniq Num assing to the obj. Defaults to None.
+        """
         if id is not None:
             self.id = id
         else:
@@ -19,13 +23,11 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """[summary]
-
-        Args:
-            list_dictionaries ([type]): [description]
-
+        """dictionary to json string
+        Arguments:
+            list_dictionaries {[list]} -- list of dictionaries
         Returns:
-            [type]: [description]
+            [str] -- json string representation of list_dictionaries
         """
         if list_dictionaries:
             return json.dumps(list_dictionaries)
@@ -34,10 +36,11 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """[summary]
-
+        """public Method that writes the JSON string
+        representation of list_objs to a file:
         Args:
-            list_objs ([type]): [description]
+            list_objs ([list]): list of objects to
+            represent as JSON and save on a file
         """
         if list_objs:
             n_list = [items.to_dictionary() for items in list_objs]
@@ -49,13 +52,12 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """[summary]
-
+        """Public method tha returns the list of
+        the JSON string representation
         Args:
-            json_string ([type]): [description]
-
+            json_string ([str]): json str that represents the obj
         Returns:
-            [type]: [description]
+            [list]: decodification of the json string
         """
         if json_string:
             return json.loads(json_string)
@@ -64,10 +66,10 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """[summary]
-
+        """Public method that returns an instance
+        with all attributes set
         Returns:
-            [type]: [description]
+            [obj]: Instance with all attributes
         """
         if cls.__name__ is "Rectangle":
             temp = cls(3, 1)
@@ -78,10 +80,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """[summary]
-
+        """Public method that creates intences from a json file
         Returns:
-            [type]: [description]
+            [list]: list of all instances created
         """
         try:
             with open(cls.__name__ + ".json", "r") as work_file:

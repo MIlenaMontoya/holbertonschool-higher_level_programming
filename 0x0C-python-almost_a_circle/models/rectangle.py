@@ -1,25 +1,24 @@
 #!/usr/bin/python3
-"""[summary]
+"""This Module holds the class Rectangle
     """
-# task 2 crear clase rectangulo que herede clase Base
 from models.base import Base
 
 
 class Rectangle(Base):
-    """class Rectangle
-
+    """Rectangle class that defines a Rectangle
     Args:
-        hereda la clase Base
+        Base ([Class]): Class that init an object with
+        an specific ID
     """
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """[summary]
 
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """Construntor Method initilizator
         Args:
-            width ([type]): [description]
-            height ([type]): [description]
-            x (int, optional): [description]. Defaults to 0.
-            y (int, optional): [description]. Defaults to 0.
-            id ([type], optional): [description]. Defaults to None.
+            width ([int]): width of the Rectangle
+            height ([int]): height of the Rectangle
+            x (int, optional): x distance. Defaults to 0.
+            y (int, optional): y distance. Defaults to 0.
+            id ([int], optional): Num that identify the obj. Defaults to None.
         """
         super().__init__(id)
         self.width = width
@@ -29,24 +28,20 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """[summary]
-
+        """witdh getter
         Returns:
-            [type]: [description]
+            [int]: Rectangle width
         """
         return self.__width
 
-# task 3 validar atributos
     @width.setter
     def width(self, value):
-        """[summary]
-
+        """width setter
         Args:
-            value ([type]): [description]
-
+            value ([obj]): Value to assign
         Raises:
-            TypeError: [description]
-            ValueError: [description]
+            TypeError: width must be an integer
+            ValueError: width must be > 0
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -57,23 +52,20 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """[summary]
-
+        """height getter
         Returns:
-            [type]: [description]
+            [int]: Rectangle  height
         """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """[summary]
-
+        """height setter
         Args:
-            value ([type]): [description]
-
+            value ([obj]): value to assign
         Raises:
-            TypeError: [description]
-            ValueError: [description]
+            TypeError: height must be an integer
+            ValueError: height must be > 0
         """
         if type(value) is not int:
             raise TypeError("height must be an integer")
@@ -84,23 +76,20 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """[summary]
-
+        """x getter
         Returns:
-            [type]: [description]
+            [int]: x value
         """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """[summary]
-
+        """x setter
         Args:
-            value ([type]): [description]
-
+            value ([obj]): value to assign
         Raises:
-            TypeError: [description]
-            ValueError: [description]
+            TypeError: x must be an integer
+            ValueError: x must be >= 0
         """
         if type(value) is not int:
             raise TypeError("x must be an integer")
@@ -111,23 +100,20 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """[summary]
-
+        """y getter
         Returns:
-            [type]: [description]
+            [int]: y value
         """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """[summary]
-
+        """y setter
         Args:
-            value ([type]): [description]
-
+            value ([obj]): value to assign
         Raises:
-            TypeError: [description]
-            ValueError: [description]
+            TypeError: y must be an integer
+            ValueError: y must be >= 0
         """
         if type(value) is not int:
             raise TypeError("y must be an integer")
@@ -136,35 +122,39 @@ class Rectangle(Base):
         else:
             self.__y = value
 
-# task 4
     def area(self):
-        """[summary]
-
+        """Method that return the rectangle area
         Returns:
-            [type]: [description]
+            [int]: Area of the rectangle
         """
-        return self.__width * self.__height
+        return self.width * self.height
 
-# task 5 y task 7
     def display(self):
-        for a in range(self.__y):
-            print()
-        for b in range(self.__height):
-            for i in range(self.__x):
-                print(" ", end="")
-            for j in range(self.__width):
-                print("#", end="")
-            print()
-
-# task 6
-    def __str__(self):
-        """[summary]
-
-        Returns:
-            [type]: [description]
+        """Method to print the rectangle with the
+        # character
         """
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"\
-            .format(self.id, self.x, self.y, self.width, self.height)
+        for y in range(self.y):
+            print("")
+        for i in range(self.height):
+            for x in range(self.x):
+                print(" ", end="")
+            for j in range(self.width):
+                print("#", end="")
+            print("")
+
+    def __str__(self):
+        """Method that return the str representation
+        Returns:
+            [str]: Rectangle representation
+        """
+        p_id = str(self.id)
+        p_w = str(self.width)
+        p_h = str(self.height)
+        p_x = str(self.x)
+        p_y = str(self.y)
+        str_to_prnt_1 = "[Rectangle] (" + p_id + ") " + p_x + "/" + p_y + " - "
+        str_to_prnt = str_to_prnt_1 + p_w + "/" + p_h
+        return str_to_prnt
 
     def update(self, *args, **kwargs):
         """Method that update an instance/object
