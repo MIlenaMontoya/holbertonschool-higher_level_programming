@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Sends a POST request using requests module
+Displays the status code using the requests module
 """
 
 import requests
@@ -8,6 +8,9 @@ from sys import argv
 
 if __name__ == '__main__':
     url = argv[1]
-    email = argv[2]
-    r = requests.post(url, data={'email': email})
-    print(r.text)
+
+    r = requests.get(url)
+    if r.status_code != 200:
+        print("Error code: {}".format(r.status_code))
+    else:
+        print(r.text)
