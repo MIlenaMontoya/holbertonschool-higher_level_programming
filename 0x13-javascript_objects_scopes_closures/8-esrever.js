@@ -1,11 +1,11 @@
 #!/usr/bin/node
- // Reverses a list
+// Reverses a list
 
-exports.esrever = function(list) {
-    const newList = [];
+exports.esrever = function (list) {
+  const newList = [];
 
-    for (let i = (list.length - 1); i >= 0; i--) {
-        newList.push(list[i]);
-    }
-    return newList;
+  for (let i = (list.length - 1); i >= 0; i--) {
+    newList.push(list[i]);
+  }
+  return newList;
 };
